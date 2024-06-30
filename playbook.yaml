@@ -1,0 +1,61 @@
+---
+- name: ctf setup
+  hosts: local
+  become: yes
+
+  tasks:
+    - name: Install Python3 and pip
+      apt:
+        name: 
+          - python3
+          - python3-pip
+        state: present
+
+    - name: Install pwntools
+      pip:
+        name: pwntools
+        state: present
+
+    - name: Install pycryptodome
+      pip:
+        name: pycryptodome
+        state: present
+    
+    - name: Install angr
+      pip:
+        name: angr
+        state: present
+
+    - name: Install basic pentesting & CTF-s tools
+      apt:
+        name:
+          - nmap
+          - sqlmap
+          - metasploit-framework
+          - ncat
+          - steghide
+          - binwalk
+          - hashcat
+          - john
+          - dirbuster
+          - ffuf
+          - tmux
+          - gcc-multilib
+          - gdb-multiarch
+          - qemu-user-static
+          - ropper
+          - ruby
+          - rubygems
+          - docker.io
+          - nodejs
+          - npm
+          - ghidra
+        state: present
+
+    - name: Install peda-gef-pwndbg
+      command: cd ~ && git clone https://github.com/apogiatzis/gdb-peda-pwndbg-gef.git && cd gdb-peda-pwndbg-gef && ./install.sh
+
+    - name: Install one_gadget
+      gem:
+        name: one_gadget
+        state: present
