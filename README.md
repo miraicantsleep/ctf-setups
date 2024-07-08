@@ -38,6 +38,10 @@ Tested on Kali Linux WSL on 30th of June 2024. This playbook installs the follow
 - [nodejs](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
 - [tmux](https://github.com/tmux/tmux)
+- [patchelf](https://nixos.org/patchelf.html)
+- [pwninit](https://github.com/io12/pwninit)
+- [cargo](https://doc.rust-lang.org/cargo/)
+- [elfutils](https://sourceware.org/elfutils/)
 
 ## Requirements
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)

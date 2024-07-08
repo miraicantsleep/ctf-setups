@@ -50,6 +50,9 @@
           - nodejs
           - npm
           - ghidra
+          - patchelf
+          - cargo
+          - elfutils
         state: present
 
     - name: Install peda-gef-pwndbg
@@ -58,4 +61,9 @@
     - name: Install one_gadget
       gem:
         name: one_gadget
+        state: present
+
+    - name: Download pwninit
+      cargo:
+        name: pwninit
         state: present
