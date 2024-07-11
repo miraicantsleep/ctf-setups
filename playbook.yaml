@@ -1,6 +1,6 @@
 ---
 - name: ctf setup
-  hosts: local
+  hosts: localhost
   become: yes
 
   tasks:
@@ -11,19 +11,13 @@
           - python3-pip
         state: present
 
-    - name: Install pwntools
+    - name: Install python packages
       pip:
-        name: pwntools
-        state: present
-
-    - name: Install pycryptodome
-      pip:
-        name: pycryptodome
-        state: present
-    
-    - name: Install angr
-      pip:
-        name: angr
+        name: 
+          - pwntools
+          - pycryptodome
+          - angr
+          - ropper
         state: present
 
     - name: Install basic pentesting & CTF-s tools
@@ -31,7 +25,6 @@
         name:
           - nmap
           - sqlmap
-          - metasploit-framework
           - ncat
           - steghide
           - binwalk
@@ -43,20 +36,22 @@
           - gcc-multilib
           - gdb-multiarch
           - qemu-user-static
-          - ropper
           - ruby
           - rubygems
           - docker.io
           - nodejs
           - npm
-          - ghidra
           - patchelf
           - cargo
           - elfutils
         state: present
 
     - name: Install peda-gef-pwndbg
-      command: cd ~ && git clone https://github.com/apogiatzis/gdb-peda-pwndbg-gef.git && cd gdb-peda-pwndbg-gef && ./install.sh
+      shell: |
+        cd ~
+        git clone https://github.com/apogiatzis/gdb-peda-pwndbg-gef.git
+        cd gdb-peda-pwndbg-gef
+        ./install.sh
 
     - name: Install one_gadget
       gem:
@@ -64,6 +59,9 @@
         state: present
 
     - name: Download pwninit
-      cargo:
-        name: pwninit
-        state: present
+      shell: |
+        wget https://github.com/io12/pwninit/releases/download/3.3.1/pwninit
+        chmod +x pwninit
+        mv pwninit /opt/pwninit
+        echo 'alias=pwninit' >> ~/.bashrc
+        source ~/.bashrc

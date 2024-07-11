@@ -8,7 +8,7 @@ This playbook is intended to be used on a fresh Linux installation. This playboo
 > **Another Note:** Also, this playbook was created because at the time of writing, i just broke my Linux installation 💀
 
 ## Description
-Tested on Kali Linux WSL on 30th of June 2024. This playbook installs the following tools:
+Tested on Kali Linux WSL on 30th of June 2024 and Ubuntu 22.04 LTS on 11th of July 2024. This playbook installs the following tools:
 - [python3](https://www.python.org/)
 - [pip](https://pypi.org/project/pip/)
 - [pycryptodome](https://pycryptodome.readthedocs.io/en/latest/)
@@ -19,7 +19,6 @@ Tested on Kali Linux WSL on 30th of June 2024. This playbook installs the follow
 - [GDB-GEF](https://github.com/hugsy/gef)
 - [gcc-multilib](https://packages.ubuntu.com/focal/gcc-multilib)
 - [gdb-multiarch](https://packages.ubuntu.com/focal/gdb-multiarch)
-- [ghidra](https://ghidra-sre.org/)
 - [angr](https://github.com/angr/angr)
 - [netcat](https://netcat.sourceforge.io/)
 - [ropper](https://github.com/sashs/Ropper)
@@ -29,7 +28,6 @@ Tested on Kali Linux WSL on 30th of June 2024. This playbook installs the follow
 - [nmap](https://nmap.org/)
 - [sqlmap](https://sqlmap.org/)
 - [john](https://www.openwall.com/john/)
-- [metasploit-framework](https://www.metasploit.com/)
 - [steghide](http://steghide.sourceforge.net/)
 - [binwalk](https://github.com/ReFirmLabs/binwalk)
 - [hashcat](https://hashcat.net/hashcat/)
